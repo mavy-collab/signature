@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none !important;
+}
+
+@keyframes dv-scan-sweep {
+    0% { top: 0%; opacity: 0; }
+    8% { opacity: 1; }
+    92% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+.dv-scanner-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #6366f1, transparent);
+    box-shadow: 0 0 10px 3px rgba(99, 102, 241, 0.6);
+    animation: dv-scan-sweep 1.6s ease-in-out;
+}
+
+@keyframes dv-scanning-dot {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+.dv-scanning-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: #6366f1;
+    animation: dv-scanning-dot 1s infinite;
+}
